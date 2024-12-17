@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Feedback Form</title>
+    <style>
+        
+        #feedback-form{
+            display: flex;
+            flex-direction: column;
+            align-items:center;
+            padding: 20;
+        }
+        
+        h4{
+            display: flex;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+    <h4><b>Product FeedBack Form</b></h4>
+    <div class ="container">
+        <form id="feedback-form">
+            <div id="block">
+                <label for="name">Product Name:</label>
+                <input type="text" id="pname" placeholder="Product Name" required>
+            </div>
+            <div id="block">
+                <label for="rating">Product Rating:</label>
+                1<input type="radio" id="one" required>
+                2<input type="radio" id="two" required>
+                3<input type="radio" id="three" required>
+                4<input type="radio" id="four" required>
+                5<input type="radio" id="five" required>
+            </div>
+            <div id="block">
+                <label for="email">Email Id:</label>
+                <input type="text" id="email" placeholder="Email" required>
+            </div>
+            <div id="block">
+                <label for="feedback">Product FeedBack:</label>
+                <input type="text" id="feedback" required>
+            </div>
+            <button id="submit">Submit</button>
+            </form>
+            </div>
+        </form>
+        <script>
+            const form =document.getElementById('feedback-form');
+            form.addEventListener('submit',(event) =>{
+                    const email = document.getElementById('email').value;
+                    const feedback = document.getElementById('feedback').value;
+                    const rating = document.getElementById('rating').value;
+                    if(!email.endsWith('@gmail.com')){
+                        alert('Invalid Email');
+                        return;
+                    }
+            })
+        </script>
+</body>
+</html>
